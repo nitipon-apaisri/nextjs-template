@@ -1,11 +1,22 @@
+import { Link } from "@/i18n/routing";
+
 import SwitchTheme from "@components/button/SwitchThemeButton";
 export default function Header() {
     return (
-        <header className="flex justify-between items-center p-10">
-            <div className="min-w-60">
-                <div className="w-12 aspect-square bg-gray-500 dark:bg-gray-50 rounded-lg"></div>
+        <header>
+            <div>
+                <div className="logo"></div>
             </div>
-            <SwitchTheme />
+            <nav>
+                <ul>
+                    <li>
+                        <Link href="/">Home</Link>
+                    </li>
+                </ul>
+            </nav>
+            <div className="justify-self-end">
+                <SwitchTheme />
+            </div>
         </header>
     );
 }
