@@ -33,6 +33,16 @@ nav ul li {
 .logo {
     @apply w-12 aspect-square bg-gray-500 dark:bg-gray-50 rounded-lg
 }
+/* .locale-button {
+    @apply text-slate-500 dark:text-white font-sans font-bold rounded-full;
+} */
+.locale-dropdown {
+    @apply absolute mt-32;
+}
+.locale-buttons {
+    @apply flex items-center flex-col gap-2;
+}
+
 
 @layer utilities {
     .text-balance {

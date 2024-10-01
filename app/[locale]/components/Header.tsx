@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/routing";
 
 import SwitchTheme from "@components/button/SwitchThemeButton";
+import SwitchLocaleButton from "./button/SwitchLocaleButton";
 export default function Header() {
     return (
         <header>
@@ -15,7 +16,10 @@ export default function Header() {
                 </ul>
             </nav>
             <div className="justify-self-end">
-                <SwitchTheme />
+                <div className="flex items-center gap-4">
+                    <SwitchLocaleButton />
+                    <SwitchTheme />
+                </div>
             </div>
         </header>
     );

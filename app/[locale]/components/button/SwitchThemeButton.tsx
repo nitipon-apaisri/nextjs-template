@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
-const SwitchTheme = () => {
+export default function SwitchTheme() {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
@@ -27,6 +27,4 @@ const SwitchTheme = () => {
             <MoonIcon className="absolute top-2 left-2 h-[1.2rem] w-[1.2rem] scale-100 dark:scale-0" />
         </button>
     );
-};
-
-export default SwitchTheme;
+}
