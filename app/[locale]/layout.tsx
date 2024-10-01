@@ -34,7 +34,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale}>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black`}>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-[#121212]`}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <Header />
                     <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
