@@ -1,5 +1,8 @@
 {
     "general": {
         "welcome": "Welcome to our application"
+    },
+    "navigation": {
+        "home": "Home"
     }
 }

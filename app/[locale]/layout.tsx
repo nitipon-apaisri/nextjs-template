@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/globals.css";
@@ -5,6 +6,7 @@ import { ThemeProvider } from "@/theme/ThemeProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Header from "@components/Header";
+import { AppProvider } from "@contexts/AppContext";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -33,11 +35,13 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale}>
+        <html lang={locale} suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-[#121212]`}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <Header />
-                    <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+                    <NextIntlClientProvider messages={messages}>
+                        <AppProvider>{children}</AppProvider>
+                    </NextIntlClientProvider>
                 </ThemeProvider>
             </body>
         </html>

@@ -1,8 +1,11 @@
+import React from "react";
 import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 import SwitchTheme from "@components/button/SwitchThemeButton";
 import SwitchLocaleButton from "./button/SwitchLocaleButton";
 export default function Header() {
+    const tNavigation = useTranslations("navigation");
     return (
         <header>
             <div>
@@ -11,7 +14,7 @@ export default function Header() {
             <nav>
                 <ul>
                     <li>
-                        <Link href="/">Home</Link>
+                        <Link href="/">{tNavigation("home")}</Link>
                     </li>
                 </ul>
             </nav>
